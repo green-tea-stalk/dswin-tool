@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view:DSWinToolFrame
+	xmlns="org.apache.pivot.wtk"
+	xmlns:bxml="http://pivot.apache.org/bxml"
+	xmlns:content="org.apache.pivot.wtk.content"
+	xmlns:collections="org.apache.pivot.collections"
+	xmlns:view="dswin.tool.view"
+	title="DSWinTool" maximized="true" styles="{padding:{top:5, left:5, bottom:5, right:5}, showWindowControls:false}">
+
+	<TablePane styles="{horizontalSpacing:5, verticalSpacing:5}">
+		<columns>
+			<TablePane.Column width="1*" />
+			<TablePane.Column width="-1" />
+			<TablePane.Column width="1*" />
+		</columns>
+		<TablePane.Row height="1*">
+			<Border title="セーブファイル" styles="{backgroundColor:null, cornerRadii:5, padding:5}">
+				<Border>
+					<ScrollPane horizontalScrollBarPolicy="fill" verticalScrollBarPolicy="fill_to_capacity">
+						<ListView bxml:id="saveFileListView" selectMode="single" />
+					</ScrollPane>
+				</Border>
+			</Border>
+			<BoxPane styles="{horizontalAlignment:'center', verticalAlignment:'center'}">
+				<PushButton bxml:id="restoreButton" preferredWidth="100" preferredHeight="25" buttonData="リストア" />
+			</BoxPane>
+			<Border title="バックアップファイル" styles="{backgroundColor:null, cornerRadii:5, padding:5}">
+				<Border>
+					<ScrollPane horizontalScrollBarPolicy="fill" verticalScrollBarPolicy="fill_to_capacity">
+						<ListView bxml:id="backupFileListView" selectMode="single" />
+					</ScrollPane>
+				</Border>
+			</Border>
+		</TablePane.Row>
+		<TablePane.Row height="-1">
+			<BoxPane styles="{horizontalAlignment:'center', verticalAlignment:'center'}">
+				<PushButton bxml:id="backupButton" preferredWidth="100" preferredHeight="25" buttonData="バックアップ" />
+			</BoxPane>
+			<TablePane.Filler />
+			<BoxPane styles="{horizontalAlignment:'center', verticalAlignment:'center'}">
+				<PushButton bxml:id="deleteButton" preferredWidth="100" preferredHeight="25" buttonData="削除" />
+			</BoxPane>
+		</TablePane.Row>
+	</TablePane>
+
+</view:DSWinToolFrame>
